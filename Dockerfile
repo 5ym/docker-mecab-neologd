@@ -13,3 +13,4 @@ RUN apk add alpine-sdk php7-dev && \
 WORKDIR /root/app
 
 ENTRYPOINT php
+CMD ["-v"]
