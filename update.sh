@@ -1,3 +1,3 @@
 #!/bin/sh
 
-docker-compose run --rm mecab -w /root/mecab-ipadic-neologd sh -c './bin/install-mecab-ipadic-neologd -n -a -y'
+docker-compose run --rm -w /root/mecab-ipadic-neologd --entrypoint bash mecab ./bin/install-mecab-ipadic-neologd -n -a -y
