@@ -18,13 +18,18 @@ docker-compose run --rm mecab
 ```
 
 ### php-fpm + nginx
-立ち上げればnginxとphp-fpmが立ち上げります。コンテナの中に入り`/var/lib/nginx/html`内にphpファイルをおけばブラウザで確認できます。
+立ち上げればnginxとphp-fpmが立ち上げります。`php/html`内にphpファイルを置けばブラウザで確認できます。
+
+```sh
+docker-compose up -d
+```
 
 ### python
-実行すればインタラクティブでpythonが起動します。
+実行すればインタラクティブでpythonが起動します。また`python/app`にファイルを置いて実行もできます。
 
 ```sh
 docker-compose run --rm mecab
+docker-compose run --rm mecab {ファイル名}
 ```
 
 ### その他
