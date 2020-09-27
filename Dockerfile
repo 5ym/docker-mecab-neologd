@@ -9,5 +9,6 @@ RUN apk add alpine-sdk php7-dev bash && \
     cd /tmp && wget https://github.com/rsky/php-mecab/archive/v0.6.0.zip && unzip v0.6.0.zip && \
     cd php-mecab-0.6.0/mecab && phpize && ./configure && make && make test && make install && \
     rm -rf /tmp/* && echo "extension=mecab.so" > /etc/php7/conf.d/mecab.ini
+VOLUME /usr/local/lib/mecab/dic
 
 CMD ["php", "-v"]
