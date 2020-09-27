@@ -1,6 +1,6 @@
 FROM alpine
 
-RUN apk add --no-cache alpine-sdk bash py-pip && \
+RUN apk add --no-cache alpine-sdk bash py-pip python3-dev && \
     cd /tmp && wget https://github.com/taku910/mecab/archive/master.zip && unzip master.zip && \
     cd mecab-master/mecab && ./configure && make && make check && make install && \
     cd ../mecab-ipadic && ./configure --with-charset=utf8 && make && make install && \
@@ -11,4 +11,4 @@ RUN apk add --no-cache alpine-sdk bash py-pip && \
 VOLUME /usr/local/lib/mecab/dic
 WORKDIR /usr/src/app
 
-CMD [ "python" ]
+CMD [ "python3" ]
