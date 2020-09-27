@@ -7,16 +7,17 @@ python/Dockerfile: pip + mecab-python3
 ### 準備
 `docker-compose-sample.yml`をコピーして`build`の箇所を適宜使用したいビルドにします。
 
-```s
+```sh
 cp docker-compose-sample.yml docker-compose.yml
 ```
 ### コマンドラインのみ
-下記のように文言を渡せばそのまま結果が帰ってきます。コマンドラインオプション等は本家のmecabから変わりません
+実行すれば本家mecabと同じようにインタラクティブで起動します。コマンドラインオプション等は本家のmecabから変わりません
 
 ```sh
-docker-compose run --rm mecab "ほげほげ"
+docker-compose run --rm mecab
 ```
-## php-fpm + nginx
+
+### php-fpm + nginx
 立ち上げればnginxとphp-fpmが立ち上げります。コンテナの中に入り`/var/lib/nginx/html`内にphpファイルをおけばブラウザで確認できます。
 
 ### python
@@ -25,3 +26,7 @@ docker-compose run --rm mecab "ほげほげ"
 ```sh
 docker-compose run --rm mecab
 ```
+
+### その他
+`/usr/local/etc/mecabrc`に追記してシステム辞書を`/usr/local/lib/mecab/dic/mecab-ipadic-neologd`に固定しています。
+一様デフォルトのipadicも`/usr/local/lib/mecab/dic/ipadic`にutf-8で作成してあります。費用であればライブラリ内で都度していするか、`-d`で指定してください。
