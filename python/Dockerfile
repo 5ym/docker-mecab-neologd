@@ -11,4 +11,4 @@ RUN apk add --no-cache alpine-sdk bash py-pip python3-dev && \
 VOLUME /usr/local/lib/mecab/dic
 WORKDIR /usr/src/app
 
-CMD [ "python3" ]
+ENTRYPOINT [ "python3" ]
