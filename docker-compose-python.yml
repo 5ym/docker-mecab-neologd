@@ -1,0 +1,10 @@
+version: '3.8'
+services:
+  mecab:
+    build: python
+    volumes:
+      - dic:/usr/local/lib/mecab/dic
+      - ./python/app:/usr/src/app
+  
+volumes:
+  dic:

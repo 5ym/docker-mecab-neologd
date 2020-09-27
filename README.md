@@ -5,10 +5,10 @@ php/Dockerfile: php-fpm + nginx
 python/Dockerfile: pip + mecab-python3
 ## How to
 ### 準備
-`docker-compose-sample.yml`をコピーして`build`の箇所を適宜使用したいビルドにします。
+任意の`docker-compose-*.yml`をコピーします
 
 ```sh
-cp docker-compose-sample.yml docker-compose.yml
+cp docker-compose-shell.yml docker-compose.yml
 ```
 ### コマンドラインのみ
 実行すれば本家mecabと同じようにインタラクティブで起動します。コマンドラインオプション等は本家のmecabから変わりません
